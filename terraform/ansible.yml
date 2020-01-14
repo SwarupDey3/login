@@ -36,7 +36,7 @@
 
   - name: download & unarchive
     unarchive:
-      src: http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz
+      src: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz
       dest: /opt/tomcat
       remote_src: yes
       extra_opts: [--strip-components=1]
