@@ -8,7 +8,7 @@ services:
     container_name: login-database
     
     environment:
-      - MYSQL_ROOT_PASSWORD=Swarup@3
+      - MYSQL_ROOT_PASSWORD=root
    
     ports:
       - '3306:3306'
