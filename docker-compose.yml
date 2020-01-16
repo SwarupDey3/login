@@ -1,16 +1,6 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    
-    container_name: login-page
-    
-    ports:
-      - '8088:8080'
-      
-    links:
-      - db
      
   db:
     build: ./db_docker
@@ -22,5 +12,16 @@ services:
    
     ports:
       - '3306:3306'
+      
+  web:
+    build: .
+    
+    container_name: login-page
+    
+    ports:
+      - '8088:8080'
+      
+    links:
+      - db
     
     
