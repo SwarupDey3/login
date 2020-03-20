@@ -1,13 +1,30 @@
 version: '3'
 
 services:
-      
-  web:
-    build: .
-    
-    container_name: login-page
+  mysqldb:
+    build: ./db_docker
+    container_name: mysqldb
+    environment:
+     - MYSQL_ROOT_PASSWORD=root
     
     ports:
-      - '8088:8080'
+     - '3306:3306'
+
+    networks:
+     - login-network
+  web:
+    build: .
+    ports:
+     - '8088:8080'
+    container_name: login-page
+    links:
+     - mysqldb:3306
+
+    networks:
+     - login-network
+    
+networks:
+  login-network:    
+
     
     
